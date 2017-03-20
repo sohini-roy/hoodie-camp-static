@@ -1,136 +1,172 @@
-<div class="welcome">
-  <div class="container">
-    <!--<img src="assets/images/low-profile-dog.png" alt="" />
-    -->
-    <h1>Welcome to Hoodie Camp!</h1>
-    <p>
-      We created this place to <a href="http://hood.ie/blog/welcoming-communities">welcome new and existing Hoodie contributors</a> and to help maintainers keep an overview.
-    </p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Camp</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <ul class="stats">
-      <li>
-        Camp Issues:
-        <small></small>
-      </li>
-      <li>
-        Your First PR:
-        <small></small>
-      </li>
-      <li>
-        First Timers Only:
-        <small></small>
-      </li>
-    </ul>
+    <base href="/" />
+    <meta name="camp/config/environment" content="%7B%22modulePrefix%22%3A%22camp%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22/%22%2C%22locationType%22%3A%22hash%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%7D%2C%22APP%22%3A%7B%22name%22%3A%22camp%22%2C%22version%22%3A%220.0.0+a321b076%22%7D%2C%22something%22%3A%22test%22%2C%22exportApplicationGlobal%22%3Afalse%7D">
+    <link rel="stylesheet" href="assets/vendor.css" integrity="sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU= sha512-z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg==">
+    <link rel="stylesheet" href="assets/camp.css" integrity="sha256-/0g1wl3HFrdtyaVQvkfzAPYKiMrt+1TYY5MNVuB0ZQs= sha512-omiKlRWM5NFEDO3xEpvOxm3OBDSsvQGKdgmXR2DZQqr2BBZcvQd3VVLL+0Z8aRYz7/Gq1H/bEb8VkzpWpSGZmg==">
+  </head>
 
-    <div class="button-container">
-      <button {{action 'reloadIssues'}}>Reload issues from GitHub</button>
+  <body>
+    <script src="assets/vendor.js"></script>
+    <script src="assets/camp.js"></script>
+    <div id="ember331" class="ember-view">
+      <header class="app-header ">
+        <p class="info">
+          <a href="#" data-ember-action="333">login with GitHub</a>
+        </p>
+        <form class="login" data-ember-action="334">
+          <div class="container">
+            <label>
+              <strong>GitHub Token</strong> <small>No scope access required</small>
+              <input id="ember353" placeholder="01234567890abcdef01234567890abcdef012345" type="text" class="ember-view ember-text-field">
+            </label>
+            <p>
+              You can <a href="https://github.com/settings/tokens/new">generate a new token from your GitHub account</a>
+            </p>
+            <span>
+              <button type="save">Sign in</button>
+              <a href="#" data-ember-action="354">cancel</a>
+            </span>
+          </div>
+        </form>
+      </header>
+
+      <main>
+        <div class="welcome">
+          <div class="container">
+            <img src="assets/images/low-profile-dog-b241965862cef6bff858d52ea3d39046.png" alt="">
+            <h1>Welcome to Hoodie Camp!</h1>
+            <p>
+              We created this place to <a href="http://hood.ie/blog/welcoming-communities">welcome new and existing Hoodie contributors</a> and to help maintainers keep an overview.
+            </p>
+            <ul class="stats">
+              <li>
+                Camp Issues: 1
+                <small><a id="ember362" href="#/help/Camp Issues" class="ember-view">?</a></small>
+              </li>
+              <li>
+                Your First PR: 1
+                <small><a id="ember377" href="#/help/Your First PR" class="ember-view">?</a></small>
+              </li>
+              <li>
+                First Timers Only: 0
+                <small><a id="ember378" href="#/help/First Timers Only" class="ember-view">?</a></small>
+              </li>
+            </ul>
+            <div class="button-container">
+              <button data-ember-action="379">Reload issues from GitHub</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="teams">
+          <div class="container">
+            <div class="grid">
+              <div class="grid-col">
+                <div class="team">
+                  <div class="team-img">
+                    <img src="assets/images/dev-beaver-4700600faf77dd60fb3be4a84481733c.png" alt="">
+                  </div>
+                  <div class="team-body">
+                    <h2><a id="ember380" href="#/teams/code" class="ember-view">Code team</a>
+                    </h2>
+                    <p>
+                      Moin! I’m Charlie the Dev Beaver.<br>
+                      I love clean code and a great developer experience.
+                    </p>
+                  </div>
+                </div>
+
+                <ul class="issues">
+                    <li>
+                      <span>No issues right now, check back later!
+                      </span>
+                    </li>
+                </ul>
+              </div>
+              <div class="grid-col">
+                <div class="team">
+                  <div class="team-img">
+                    <img src="assets/images/design-alpaca-08222b5112ff48a315000306cc6abef0.png" alt="">
+                  </div>
+                  <div class="team-body">
+                    <h2><a id="ember389" href="#/teams/design" class="ember-view">Design team</a>
+                    </h2>
+                    <p>
+                      <span lang="es">¿Qué tal?</span>
+                      I’m the Design Alpaca. I care about accessability and ease of use of our websites and apps.
+                    </p>
+                  </div>
+                </div>
+
+                <ul class="issues">
+                    <li>
+                      <span>No issues right now, check back later!</span>
+                    </li>
+                </ul>
+              </div>
+            </div>
+            <div class="grid">
+              <div class="grid-col">
+                <div class="team">
+                  <div class="team-img">
+                    <img src="assets/images/docs-chicken-eb6351b858736ceeed59732342e3e5a1.png" alt="">
+                  </div>
+                  <div class="team-body">
+                    <h2><a id="ember390" href="#/teams/documentation" class="ember-view">Docs team</a></h2>
+                    <p>
+                      Docs docs docs! I’m the Docs Chicken and I make sure that all our code is well documented.
+                    </p>
+                  </div>
+                </div>
+
+                <ul class="issues">
+                    <li class="open your-first-pr">
+                      <a class="title" href="https://github.com/hoodiehq/camp/issues/24">Update Deployment Docs to a Linux Server</a>
+                    </li>
+                </ul>
+              </div>
+              <div class="grid-col">
+                <div class="team">
+                  <div class="team-img">
+                    <img src="assets/images/blog-bear-24d589c7571d5ac3fb3c27a4e2deb3f6.png" alt="">
+                  </div>
+                  <div class="team-body">
+                    <h2><a id="ember392" href="#/teams/editorial" class="ember-view">Editorial team</a></h2>
+                    <p>
+                      <span lang="fr">Salut!</span>
+                      We have lots of good stories here at Hoodie, I love to share them!
+                    </p>
+                  </div>
+                </div>
+
+                <ul class="issues">
+                    <li>
+                      <span>No issues right now, check back later!</span>
+                    </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+      <footer class="app-footer">
+        <div class="container">
+          <small>
+            © 2012-2017 | <a href="https://github.com/hoodiehq/camp/tree/master">Edit this app on GitHub</a>
+          </small>
+          <img src="public/assets/images/camp.jpg" alt="">
+        </div>
+      </footer>
     </div>
-  </div>
-</div>
-
-<div class="teams">
-  <div class="container">
-    <div class="grid">
-      <div class="grid-col">
-        <div class="team">
-          <div class="team-img">
-            <!--<img src="assets/images/dev-beaver.png" alt="" />
-            -->
-          </div>
-          <div class="team-body">
-            <h2>Code team</h2>
-
-            <p>
-              Moin! I’m Charlie the Dev Beaver.<br>
-              I love clean code and a great developer experience.
-            </p>
-          </div>
-        </div>
-
-        <ul class="issues">
-          <li class="open {{issue-labels issue}}">
-              <a class="title" href="{{issue.url}}"></a>
-            </li>
-            <li>
-              <span>No issues right now, check back later!</span>
-            </li>
-        </ul>
-      </div>
-      <div class="grid-col">
-        <div class="team">
-          <div class="team-img">
-            <!--<img src="assets/images/design-alpaca.png" alt="" />
-            -->
-          </div>
-          <div class="team-body">
-            <h2>Design team</h2>
-
-            <p>
-              <span lang="en">Hello</span>
-              I’m the Design Alpaca. I care about accessibility and ease of use of our websites and apps.
-            </p>
-          </div>
-        </div>
-
-        <ul class="issues">
-            <li class="open {{issue-labels issue}}">
-              <a class="title" href="{{issue.url}}"></a>
-            </li>
-            <li>
-              <span>No issues right now, check back later!</span>
-            </li>
-        </ul>
-      </div>
-    </div>
-    <div class="grid">
-      <div class="grid-col">
-        <div class="team">
-          <div class="team-img">
-            <!--<img src="assets/images/docs-chicken.png" alt="" />
-            -->
-          </div>
-          <div class="team-body">
-            <h2>Docs team</h2>
-            <p>
-              Docs docs docs! I’m the Docs Chicken and I make sure that all our code is well documented.
-            </p>
-          </div>
-        </div>
-
-        <ul class="issues">
-            <li class="open {{issue-labels issue}}">
-              <a class="title" href="{{issue.url}}"></a>
-            </li>
-            <li>
-              <span>No issues right now, check back later!</span>
-            </li>
-        </ul>
-      </div>
-      <div class="grid-col">
-        <div class="team">
-          <div class="team-img">
-            <!--<img src="assets/images/blog-bear.png" alt="" />
-            -->
-          </div>
-          <div class="team-body">
-            <h2>Editorial team</h2>
-
-            <p>
-              <span lang="en">hello</span>
-              We have lots of good stories here at Hoodie, I love to share them!
-            </p>
-          </div>
-        </div>
-
-        <ul class="issues">
-            <li class="open {{issue-labels issue}}">
-              <a class="title" href="{{issue.url}}"></a>
-            </li>
-            <li>
-              <span>No issues right now, check back later!</span>
-            </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+  </body>
+</html>
