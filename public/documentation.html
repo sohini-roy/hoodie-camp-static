@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Camp</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <base href="/" />
+    <meta name="camp/config/environment" content="%7B%22modulePrefix%22%3A%22camp%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22/%22%2C%22locationType%22%3A%22hash%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%7D%2C%22APP%22%3A%7B%22name%22%3A%22camp%22%2C%22version%22%3A%220.0.0+a321b076%22%7D%2C%22something%22%3A%22test%22%2C%22exportApplicationGlobal%22%3Afalse%7D">
+    <link rel="stylesheet" href="assets/vendor.css" integrity="sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU= sha512-z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg==">
+    <link rel="stylesheet" href="assets/camp-.css" integrity="sha256-/0g1wl3HFrdtyaVQvkfzAPYKiMrt+1TYY5MNVuB0ZQs= sha512-omiKlRWM5NFEDO3xEpvOxm3OBDSsvQGKdgmXR2DZQqr2BBZcvQd3VVLL+0Z8aRYz7/Gq1H/bEb8VkzpWpSGZmg==">
+  </head>
+
+  <body>
+    <!--<script src="assets/vendor.js" integrity="sha256-zTWSkxAI1NVIi0QtCzxTz9qYR8OD+B0PxGQDtzhcdE8= sha512-wIJoijJK0s/hdi62H6niDZMbWvQjEoNyUIbAin6o3Mt6lZhN/BXogzhy1DbBp6/2aWHKx0R7GccCoLfDukffiw=="></script>
+    <script src="assets/camp.js" integrity="sha256-ZrWVxAZyw3Fm8tXgDqRPsmYxuXOls/tSr6dDOOd8IVQ= sha512-HN/De/rNLT+YluJvlBGUKjGkDktoo7Ig5Sos72p2lKBrFveFqHbK3FWBMBg9oq95dADy5FS9THOYqzsQxy2X+A=="></script>-->
+    <div id="ember331" class="ember-view">
+      <header class="app-header ">
+        <p class="info">
+          <a href="#" data-ember-action="333">login with GitHub</a>
+        </p>
+        <form class="login" data-ember-action="334">
+          <div class="container">
+            <label>
+              <strong>GitHub Token</strong> <small>No scope access required</small>
+              <input id="ember353" placeholder="01234567890abcdef01234567890abcdef012345" type="text" class="ember-view ember-text-field">
+            </label>
+            <p>
+              You can <a href="https://github.com/settings/tokens/new">generate a new token from your GitHub account</a>
+            </p>
+            <span>
+              <button type="save">Sign in</button>
+              <a href="#" data-ember-action="354">cancel</a>
+            </span>
+          </div>
+        </form>
+      </header>
+
+      <main>
+        <div class="team">
+          <div class="container">
+            <p>
+              <a href="public/index.html" class="ember-view">home</a>
+            </p>
+
+            <div class="team-mascot">
+              <img src="assets/images/docs-chicken-eb6351b858736ceeed59732342e3e5a1.png" alt="" />
+            </div>
+
+            <h1>Doooocs docs docs!</h1>
+
+            <p>
+              I’m the <a href="http://hood.ie/animals/#dev-beaver">Docs chickend</a> and
+              I make sure that all our code is well documented.
+            </p>
+
+
+            <h2>We are looking for a Documentation Team Lead</h2>
+
+            <p>
+              The documentation team has currently no team lead. A team lead is looking after
+              what we want to achieve as community and translates it into documentation-related
+              task. They try to grow a team of contributors and maintainers that help
+              to work on these issues and help others to become part of the team.
+            </p>
+
+            <p>
+              If you have any questions or would like to give it a try, please ping us
+              <a href="https://twitter.com/hoodiehq">on twitter</a> or <a href="http://hood.ie/chat/">on slack</a> :)
+            </p>
+
+            <h2>Issue for new documentation contributors</h2>
+
+            <ul class="issues">
+            <!--each model.yourFirstPRIssues as |issue
+              <li class="open {{issue-labels issue}}">
+                <a class="title" href="{{issue.url}}">{{issue.title}}</a>
+              </li>
+            #each
+            #unless model.yourFirstPRIssues-->
+              <li class="empty">
+                So sorry, but we currently don’t have any issues reserved for new
+                contributors! Please <a href="https://twitter.com/hoodiehq">ping us on
+                twitter</a> or <a href="http://hood.ie/chat">in our Hoodie chat</a>,
+                we are happy to help you find something to work on.
+              </li>
+
+            </ul>
+            <h2>Issue for recurring documentation contributors</h2>
+            <ul class="issues">
+            <!--each model.notYourFirstPRIssues as |issue|
+              <li class="open {{issue-labels issue}}">
+                <a class="title" href="{{issue.url}}">{{issue.title}}</a>
+              </li>
+            #each
+            #unless model.notYourFirstPRIssues-->
+              <li class="empty">
+                So sorry, but we currently don’t have any issues reserved for new
+                contributors! Please <a href="https://twitter.com/hoodiehq">ping us on
+                twitter</a> or <a href="http://hood.ie/chat">in our Hoodie chat</a>,
+                we are happy to help you find something to work on
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </main>
+      <footer class="app-footer">
+        <div class="container">
+          <small>
+            © 2012-2017 | <a href="https://github.com/hoodiehq/camp/tree/master">Edit this app on GitHub</a>
+          </small>
+          <img src="assets/images/camp-1828dc0fa2f4e23243706291a36a7910.png" alt="">
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
