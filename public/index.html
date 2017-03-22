@@ -48,15 +48,15 @@
             </p>
             <ul class="stats">
               <li>
-                Camp Issues: 1
+                Camp Issues: <span id = "camp_issues">Loading..</span>
                 <small><a id="ember362" href="#/help/Camp Issues" class="ember-view">?</a></small>
               </li>
               <li>
-                Your First PR: 1
+                Your First PR: <span id = "first_pr_issues">Loading..</span>
                 <small><a id="ember377" href="#/help/Your First PR" class="ember-view">?</a></small>
               </li>
               <li>
-                First Timers Only: 0
+                First Timers Only: <span id = "first_timer_issues">Loading..</span>
                 <small><a id="ember378" href="#/help/First Timers Only" class="ember-view">?</a></small>
               </li>
             </ul>
@@ -157,7 +157,7 @@
           </div>
         </div>
       </main>
-
+camp_issues
       <footer class="app-footer">
         <div class="container">
           <small>
@@ -168,7 +168,19 @@
       </footer>
     </div>
   </body>
-  <script type="text/javascript" src="assets/jquery.js">
 
+  <script type="text/javascript" src="assets/jquery.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $.ajax({
+        url: "/get_issues",
+        method: "get",
+        success: function(result){
+          $('#camp_issues').html(result.camp_issues);
+          $('#first_pr_issues').html(result.first_pr);
+          $('#first_timer_issues').html(result.first_timer);
+        }
+      });
+    });
   </script>
 </html>
