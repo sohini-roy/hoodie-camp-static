@@ -9,9 +9,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-app.get('/', function (req, res) {
-  res.sendfile('public/index.html')
-})
+// app.get('/', function (req, res) {
+//   res.sendfile('public/index.html')
+// })
 
 app.use(express.static('public'));
 
