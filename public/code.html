@@ -14,25 +14,23 @@
   </head>
 
   <body>
-    <!--<script src="assets/vendor.js" integrity="sha256-zTWSkxAI1NVIi0QtCzxTz9qYR8OD+B0PxGQDtzhcdE8= sha512-wIJoijJK0s/hdi62H6niDZMbWvQjEoNyUIbAin6o3Mt6lZhN/BXogzhy1DbBp6/2aWHKx0R7GccCoLfDukffiw=="></script>
-    <script src="assets/camp.js" integrity="sha256-ZrWVxAZyw3Fm8tXgDqRPsmYxuXOls/tSr6dDOOd8IVQ= sha512-HN/De/rNLT+YluJvlBGUKjGkDktoo7Ig5Sos72p2lKBrFveFqHbK3FWBMBg9oq95dADy5FS9THOYqzsQxy2X+A=="></script>-->
-    <div id="ember331" class="ember-view">
+        <div>
       <header class="app-header ">
         <p class="info">
-          <a href="#" data-ember-action="333">login with GitHub</a>
+          <a href="#">login with GitHub</a>
         </p>
-        <form class="login" data-ember-action="334">
+        <form class="login">
           <div class="container">
             <label>
               <strong>GitHub Token</strong> <small>No scope access required</small>
-              <input id="ember353" placeholder="01234567890abcdef01234567890abcdef012345" type="text" class="ember-view ember-text-field">
+              <input placeholder="01234567890abcdef01234567890abcdef012345" type="text">
             </label>
             <p>
               You can <a href="https://github.com/settings/tokens/new">generate a new token from your GitHub account</a>
             </p>
             <span>
               <button type="save">Sign in</button>
-              <a href="#" data-ember-action="354">cancel</a>
+              <a href="#">cancel</a>
             </span>
           </div>
         </form>
@@ -42,7 +40,7 @@
         <div class="team">
           <div class="container">
             <p>
-              <a href="index.html" class="ember-view">home</a>
+              <a href="index.html">home</a>
             </p>
 
             <div class="team-mascot">
@@ -114,12 +112,7 @@
             </p>
 
             <ul class="issues">
-            <!--each model.yourFirstPRIssues as |issue
-              <li class="open {{issue-labels issue}}">
-                <a class="title" href="{{issue.url}}">{{issue.title}}</a>
-              </li>
-            #each
-            #unless model.yourFirstPRIssues-->
+
               <li class="empty">
                 <span>So sorry, but we currently don’t have any issues reserved for new
                 contributors! Please <a href="https://twitter.com/hoodiehq">ping us on
@@ -131,12 +124,7 @@
             </ul>
             <h2>Issue for code contributors</h2>
             <ul class="issues">
-            <!--each model.notYourFirstPRIssues as |issue|
-              <li class="open {{issue-labels issue}}">
-                <a class="title" href="{{issue.url}}">{{issue.title}}</a>
-              </li>
-            #each
-            #unless model.notYourFirstPRIssues-->
+
               <li class="empty">
                 <span>So sorry, but we currently don’t have any issues reserved for new
                 contributors! Please <a href="https://twitter.com/hoodiehq">ping us on
