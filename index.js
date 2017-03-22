@@ -1,6 +1,6 @@
 var express = require('express')
 var bodyParser = require('body-parser')
-var http = require('http')
+var https = require('https')
 
 var app = express();
 
@@ -18,17 +18,13 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.get('/get_issues', function (req, res) {
-  var request = http.request(options, function(response){
+  var request = https.request(options, function(response){
     var body = '';
     response.on('data',function(chunk){
-      console.log("Got partial data");
-      console.log(chunk);
         body+=chunk;
     });
 
     response.on('end',function(){
-      console.log("Response got");
-      console.log(body);
         var issues_data = JSON.parse(body);
         var response_data = {
           camp_issues: issues_data.length,
@@ -36,24 +32,24 @@ app.get('/get_issues', function (req, res) {
           first_timer: 0
         }
         for(var i=0;i<issues_data.length;i++){
-          for(var j=0;j<issues_data[i].label.length;j++){
-            if(issues_data[i].label[j].name=="Your First PR"){
-              response_data.frist_pr++
+          for(var j=0;j<issues_data[i].labels.length;j++){
+            if(issues_data[i].labels[j].name=="Your First PR"){
+              response_data.first_pr+=1
             }
-            if(issues_data[i].label[j].name=="first-timers-only"){
-              response_data.frist_timer++
+            if(issues_data[i].labels[j].name=="first-timers-only"){
+              response_data.first_timer+=1
             }
           }
         }
-        console.log("Sending data");
         res.send(response_data)
     });
-
-    request.on('error', function(e) {
-      console.error('Error: '+e);
-    });
-    request.end();
   });
+
+  request.on('error', function(e) {
+    console.error('Error: '+e);
+  });
+  request.end();
+
 })
 
 app.use(express.static('public'));
