@@ -8,7 +8,7 @@ var options = {
   host: 'api.github.com',
   path: '/repos/hoodiehq/camp/issues',
   method: 'GET',
-  headers: 'headers: {'user-agent':'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)'}'
+  headers: {'user-agent':'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)'}
 }
 
 // parse application/x-www-form-urlencoded
@@ -18,13 +18,17 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.get('/get_issues', function (req, res) {
-  var request = https.request(options, function(response){
+  var request = http.request(options, function(response){
     var body = '';
     response.on('data',function(chunk){
+      console.log("Got partial data");
+      console.log(chunk);
         body+=chunk;
     });
 
     response.on('end',function(){
+      console.log("Response got");
+      console.log(body);
         var issues_data = JSON.parse(body);
         var response_data = {
           camp_issues: issues_data.length,
@@ -41,6 +45,7 @@ app.get('/get_issues', function (req, res) {
             }
           }
         }
+        console.log("Sending data");
         res.send(response_data)
     });
 
