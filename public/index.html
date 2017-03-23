@@ -174,12 +174,28 @@
     });
     var load_issues = function(){
       $.ajax({
-        url: "/get_issues",
+        url: "https://api.github.com/repos/hoodiehq/camp/issues",
         method: "get",
         success: function(result){
-          $('#camp_issues').html(result.camp_issues);
-          $('#first_pr_issues').html(result.first_pr);
-          $('#first_timer_issues').html(result.first_timer);
+          console.log(result);
+          for(var i=0;i<result.length;i++){
+            console.log(result[i].title)
+          }
+          var first_pr = 0
+          var first_timer = 0
+          for(var i=0;i<result.length;i++){
+            for(var j=0;j<result[i].labels.length;j++){
+              if(result[i].labels[j].name=="Your First PR"){
+                first_pr++
+              }
+              if(result[i].labels[j].name=="first-timers-only"){
+                first_timer++
+              }
+            }
+          }
+          $('#camp_issues').html(result.length);
+          $('#first_pr_issues').html(first_pr);
+          $('#first_timer_issues').html(first_timer);
         }
       });
     }
