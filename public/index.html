@@ -19,7 +19,8 @@
         <p class="info" id="loginlink">
           <a href="#" onclick="disp_form()" id="inline">login with GitHub</a>
         </p>
-        <form id="divaddform">
+        <p class="info" style="display:none" id="afterlogin"></p>
+        <div style="display:none" id="divaddform">
             <div class="container">
               <label>
                 <strong>GitHub Token</strong> <small>No scope access required</small>
@@ -33,7 +34,7 @@
                 <a href="#" onclick="cancel()">cancel</a>
               </span>
             </div>
-          </form>
+          </div>
         </header>
 
       <main>
@@ -169,9 +170,10 @@
 
   <script type="text/javascript" src="assets/jquery.js"></script>
   <script type="text/javascript">
+    var user_data;
     $(document).ready(function(){
       load_issues();
-    });
+    })
     var load_issues = function(){
       $.ajax({
         url: "https://api.github.com/repos/hoodiehq/camp/issues",
@@ -200,13 +202,24 @@
       var token = $('#token').val();
       console.log(token)
       $.ajax({
-        url: "https://api.github.com/?access_token=" + token,
+        url: "https://api.github.com/user?access_token=" + token,
         method: 'GET',
-        sucess: function(result){
-          console.log(result)
+        success: function(result){
+          user_data=result
+          $('#afterlogin').show().html('Signed in as '+user_data.login + ' | <a href="#" onclick = "signout()">signout</a>')
+          $('#divaddform').hide();
+          $('#loginlink').hide();
         }
       });
     }
+
+    var signout = function(){
+      user_data = {};
+      $('#afterlogin').hide();
+      $('#divaddform').hide();
+      $('#loginlink').show();
+    }
+
   </script>
   <script type ="text/javascript">
     var disp_form = function(){
