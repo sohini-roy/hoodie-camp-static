@@ -14,27 +14,27 @@
   </head>
 
   <body>
-        <div id>
-      <header class="app-header ">
-        <p class="info">
-          <a href="#">login with GitHub</a>
+    <div>
+      <header class="app-header">
+        <p class="info" id="loginlink">
+          <a href="#" onclick="disp_form()" id="inline">login with GitHub</a>
         </p>
-        <form class="login">
-          <div class="container">
-            <label>
-              <strong>GitHub Token</strong> <small>No scope access required</small>
-              <input placeholder="01234567890abcdef01234567890abcdef012345" type="text">
-            </label>
-            <p>
-              You can <a href="https://github.com/settings/tokens/new">generate a new token from your GitHub account</a>
-            </p>
-            <span>
-              <button type="save">Sign in</button>
-              <a href="#">cancel</a>
-            </span>
-          </div>
-        </form>
-      </header>
+        <form id="divaddform">
+            <div class="container">
+              <label>
+                <strong>GitHub Token</strong> <small>No scope access required</small>
+                <input placeholder="01234567890abcdef01234567890abcdef012345" type="text" id="token">
+              </label>
+              <p>
+                You can <a href="https://github.com/settings/tokens/new">generate a new token from your GitHub account</a>
+              </p>
+              <span>
+                <button onclick="authenticate()">Sign in</button>
+                <a href="#" onclick="cancel()">cancel</a>
+              </span>
+            </div>
+          </form>
+        </header>
 
       <main>
         <div class="welcome">
@@ -177,10 +177,6 @@
         url: "https://api.github.com/repos/hoodiehq/camp/issues",
         method: "get",
         success: function(result){
-          console.log(result);
-          for(var i=0;i<result.length;i++){
-            console.log(result[i].title)
-          }
           var first_pr = 0
           var first_timer = 0
           for(var i=0;i<result.length;i++){
@@ -199,5 +195,29 @@
         }
       });
     }
+
+    var authenticate = function(){
+      var token = $('#token').val();
+      console.log(token)
+      $.ajax({
+        url: "https://api.github.com/?access_token=" + token,
+        method: 'GET',
+        sucess: function(result){
+          console.log(result)
+        }
+      });
+    }
   </script>
+  <script type ="text/javascript">
+    var disp_form = function(){
+      $('#loginlink').hide();
+      $('#divaddform').show();
+    }
+    var cancel = function(){
+      $('#loginlink').show();
+      $('#divaddform').hide();
+    }
+
+  </script>
+
 </html>
